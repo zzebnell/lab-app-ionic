@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true">
+   <ion-card (click)="mensaje()">
+      <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+      <ion-card-header>
+        <ion-card-title>{{userName}}</ion-card-title>
+        <ion-card-subtitle>
+          <ion-icon name="desktop-outline" size="large" color="success" style="margin-bottom: 10px;"></ion-icon>
+          <ion-label style="display: block; margin-bottom: 10px;" color="success">{{estado}}</ion-label>
+        </ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        
+      </ion-card-content>
+    </ion-card>
+
+    <div class="center">
+      <ul class="buttons">
+        <li>
+          <ion-button color="primary" (click)="redirMaquinas()">Lista de maquinas</ion-button>
+        </li>
+        <br>
+        <li>
+          <ion-button color="primary" (click)="redirSinMaquinas()">Lista sin maquinas</ion-button>
+        </li>
+      </ul>
+    </div>
+</ion-content>

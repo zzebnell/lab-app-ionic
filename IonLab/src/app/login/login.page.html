@@ -1,0 +1,20 @@
+<ion-content [fullscreen]="true">
+  <div class="center">
+    <ion-card class="card">
+      <ion-card-header>
+        <ion-card-title class="title-style">Log in</ion-card-title>
+        <br>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-input label="Usuario" label-placement="floating" fill="outline" placeholder="Nombre de usuario" [(ngModel)]="user"></ion-input>
+        <br>
+        <ion-input type="password" label="Contraseña" label-placement="floating" fill="outline" placeholder="Contraseña" [(ngModel)]="password"></ion-input>
+        <br>
+        <div class="centering">
+          <ion-button strong="true" size="large" (click)="iniciarSesion()">Iniciar Sesion</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

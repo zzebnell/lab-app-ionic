@@ -1,0 +1,65 @@
+.list {
+   margin: 0 auto;
+   display: flex;
+   width: 90vw;
+   margin-top: 30px;
+   flex-direction: column;
+   align-items: center;
+   border-radius: 30px;
+}
+
+.list .divlist {
+   display: block;
+   width: 100%;
+}
+
+.list .divlist ion-item {
+   padding: 30px;
+   font-weight: bold;
+   font-size: 30px;
+}
+
+ion-title {
+   padding: 0;
+   margin: 0;
+   text-align: center;
+   width: 100%;
+   font-size: 30px;
+   position: relative;
+}
+
+ion-toolbar {
+   background-color: red;
+}
+
+ion-list ion-icon {
+   zoom: 1.5;
+}
+
+.active {
+   display: block;
+   padding: 0;
+   margin: 10px 0 0 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.active li {
+   display: inline-block;
+   width: 30vw;
+   padding: 10px;
+   border-radius: 15px;
+   background-color: #f1faee;
+   color: black;
+   font-weight: bold;
+   margin: 0 10px;
+   position: relative;
+}
+
+.active li ion-icon {
+   right: 5px;
+   top: 3px;
+   position: absolute;
+   zoom: 180%;
+}

@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar style="padding: 20px;">
+      <ion-title>LISTA DE MAQUINAS</ion-title>
+      <ul class="active">
+        <li>
+          <span>Libre</span>
+          <ion-icon name="ellipse" color="success"></ion-icon>
+        </li>
+        <li>
+          <span>En uso</span>
+          <ion-icon name="ellipse" color="danger"></ion-icon>
+        </li>
+      </ul>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="list">
+    <div class="divlist">
+      <ion-list *ngFor="let maquina of listaMaquinas">
+        <ion-item (click)="openModal()">
+          <ion-label> {{ maquina.nombre }} </ion-label>
+          <div *ngIf="maquina.ocupada === false">
+            <ion-icon name="ellipse" color="success"></ion-icon>
+          </div>
+          <div *ngIf="maquina.ocupada === true">
+            <ion-icon name="ellipse" color="danger"></ion-icon>
+          </div>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
