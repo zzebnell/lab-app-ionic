@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  userName: string = "Leonel Zeballos";
+  userName: any = localStorage.getItem('Username');
   estado: string = "Activo";
 
   constructor(private router : Router) {
@@ -24,7 +24,7 @@ export class HomePage {
   }
 
   redirSinMaquinas = () => {
-    this.router.navigate(['/']);
+    this.router.navigate(['/sin-maquinas']);
   }
 
 }

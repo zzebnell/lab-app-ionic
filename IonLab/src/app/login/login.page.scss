@@ -1,48 +1,21 @@
-.center {
-    display: flex;
+ion-grid {
     width: 100vw;
     height: 100vh;
-    align-items: center;
-    justify-content: center;
 }
 
-.centering {
+ion-row {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
 }
 
-.card {
-    border-radius: 15px;
-    background-color: #f1faee;
-
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+.title {
+   text-align: center;
+   font-weight: 900;
+   font-size: 30px;
 }
 
-.title-style {
-    color: black;
-    font-size: 2rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-ion-button {
-    --border-radius: 15px;
-    --background: #0A253F;
-    --color: white;
-    --padding: 30px;
-    --padding-top: 20px;
-    --padding-bottom: 20px;
-    --padding-left: 20px;
-    --padding-right: 20px;
-
-    --width: 100%;
-    
-    --box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-ion-input {
-    --highlight-color-focused:#0A253F;
-    --color:black;
+.card-style {
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+   width: 90vw;
+   border-radius: 15px;
 }

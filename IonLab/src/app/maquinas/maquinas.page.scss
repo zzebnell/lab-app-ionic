@@ -19,17 +19,16 @@
    font-size: 30px;
 }
 
-ion-title {
+.titulo {
    padding: 0;
-   margin: 0;
    text-align: center;
-   width: 100%;
-   font-size: 30px;
-   position: relative;
+   font-size: 5vw;
+   font-weight: 900;
+   margin-left: 10px;
 }
 
-ion-toolbar {
-   background-color: red;
+ion-menu-button{
+   z-index: 50;
 }
 
 ion-list ion-icon {
@@ -62,4 +61,27 @@ ion-list ion-icon {
    top: 3px;
    position: absolute;
    zoom: 180%;
+}
+
+.down {
+   position: absolute;
+   left: 0;
+   width: 100%;
+   bottom: 30px;
+}
+
+.tituloMaquina {
+   font-size: 30px;
+   font-weight: bold;
+   text-align: center;
+}
+
+li {
+   list-style: none;
+}
+
+.menu-title {
+   font-weight: 900;
+   --color: blue;
+   text-transform: uppercase;
 }

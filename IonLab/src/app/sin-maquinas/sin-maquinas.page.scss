@@ -1,0 +1,47 @@
+.title {
+   padding: 0;
+   font-size: 5vw;
+   text-align: center;
+   font-weight: 900;
+   margin-left: 10px;
+}
+
+.list {
+   margin: 0 auto;
+   display: flex;
+   width: 90vw;
+   margin-top: 30px;
+   flex-direction: column;
+   align-items: center;
+   border-radius: 30px;
+   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.tool-bar {
+   --background: black;
+   height: 80px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+.zitem {
+   width: 100%;
+}
+
+.reg-button {
+   --background: #2FDF75;
+   --color: black;
+   font-weight: 900;
+}
+
+.button-container {
+   width: 90vw;
+   padding: 0;
+   margin: 0 auto;
+}
+
+.label-list {
+   font-weight: bold;
+   font-size: 20px;
+}

@@ -1,7 +1,15 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-button slot="start">
+         <ion-menu-button></ion-menu-button>
+      </ion-button>
+      <ion-title class="titulo" slot="start">LISTA DE MAQUINAS</ion-title>
+   </ion-toolbar>
+</ion-header>
+
 <ion-content [fullscreen]="true">
   <ion-header>
     <ion-toolbar style="padding: 20px;">
-      <ion-title>LISTA DE MAQUINAS</ion-title>
       <ul class="active">
         <li>
           <span>Libre</span>
@@ -18,7 +26,7 @@
   <div class="list">
     <div class="divlist">
       <ion-list *ngFor="let maquina of listaMaquinas">
-        <ion-item (click)="openModal()">
+        <ion-item (click)="openModal(maquina)">
           <ion-label> {{ maquina.nombre }} </ion-label>
           <div *ngIf="maquina.ocupada === false">
             <ion-icon name="ellipse" color="success"></ion-icon>
@@ -30,4 +38,40 @@
       </ion-list>
     </div>
   </div>
+
+  <ion-modal (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <div style="width: 100px; display: flex; justify-content: center;">
+              <ion-icon name="ellipse" [color]="enUso" style="zoom: 2;"></ion-icon>
+            </div>
+          </ion-buttons>
+          <ion-title class="tituloMaquina">{{ nroMaquina }}</ion-title>
+          <ion-buttons slot="end">
+            <div style="width: 100px; display: flex; justify-content: center;">
+              <ion-button [strong]="true" (click)="cancel(nroMaquina)">Salir</ion-button>
+            </div>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <ion-list>
+            <ion-input [value]="registroNombre" label="Nombre" labelPlacement="floating" placeholder="Nombre" [(ngModel)]="partialName"></ion-input>
+            <ion-input [value]="registroCI" label="CI" labelPlacement="floating" placeholder="1234567890" [(ngModel)]="partialCI"></ion-input>
+            <ion-input [value]="registroHora" label="Hora" labelPlacement="floating" placeholder="hh / mm" [(ngModel)]="partialHora"></ion-input>
+          </ion-list>
+        </ion-item>
+
+        <br>
+
+        <div class="down">
+          <ion-button  expand="block" strong="true" (click)="confirm(nroMaquina)" [color]="enUso">{{ mensajeEstadoUso }}</ion-button>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
 </ion-content>
