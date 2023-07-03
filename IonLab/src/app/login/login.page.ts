@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, AlertInput } from '@ionic/angular';
+import { Adh } from './Adh';
 
 @Component({
   selector: 'app-login',
@@ -12,24 +13,36 @@ export class LoginPage implements OnInit {
   user: string = "";
   password : string = "";
 
+  listaCuentas!: Adh[];
+
   constructor(private router : Router, private alertController: AlertController) {
-    
+    this.listaCuentas = [new Adh('Leonel', '12345'), new Adh('admin', 'admin')];
   }
 
   ngOnInit() {
+   if (localStorage.getItem('Logged') === 'true') {
+      this.router.navigate(['/home']);
+   }
   }
 
   iniciarSesion = () => {
-   localStorage.setItem('Username', this.user);
-   localStorage.setItem('Password', this.password);
+   const cuenta = new Adh(this.user, this.password);
 
-   if (this.datosVacios()) {
+   if (this.validarUsuario(cuenta)) {
+      localStorage.setItem('Username', this.user);
+      localStorage.setItem('Password', this.password);
+
+      localStorage.setItem('Logged', 'true'); // Pendiente
+      this.router.navigate(['/home']);
+
+   }
+
+   else if (this.datosVacios()) {
       this.loginVacioAlert()
    }
 
    else {
-      localStorage.setItem('Username', this.user);
-      this.router.navigate(['/home']);
+      this.datosIncorrectosAlert();
    }
 
   }
@@ -45,8 +58,28 @@ export class LoginPage implements OnInit {
    await alert.present();
  }
 
+ async datosIncorrectosAlert() {
+   const alert = await this.alertController.create({
+     header: 'Datos incorrectos',
+     subHeader: '',
+     message: '',
+     buttons: ['OK']
+   });
+
+   await alert.present();
+ }
+
  datosVacios() {
    return this.user === '' || this.password === '';
+ }
+
+ validarUsuario(cuenta: Adh) {
+   for (let i = 0; i < this.listaCuentas.length; i++) {
+      if (this.listaCuentas[i].usuario === cuenta.usuario && this.listaCuentas[i].password === cuenta.password) {
+         return true;
+      }
+   }
+   return false;
  }
 
 }
